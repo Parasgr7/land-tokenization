@@ -128,7 +128,7 @@ export default function Navbar() {
                   alt="Your Company"
                 />
               </div>
-              <span className="text-lg font-bold text-white">Land Management Tracker Dapp</span>
+              <span className="text-lg font-bold text-white">TerraSwap</span>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 

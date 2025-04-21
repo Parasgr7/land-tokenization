@@ -1,4 +1,4 @@
-# 🌍 Land Tokenization DApp
+# 🌍 TerraSwap DApp
 
 A decentralized application (DApp) for claiming, releasing, and swapping virtual land squares using smart contracts. Users can manage their land inventory, and forcefully take over surrounded lands. Built with Solidity, Truffle, and React.
 
@@ -18,7 +18,7 @@ A decentralized application (DApp) for claiming, releasing, and swapping virtual
 - **Frontend**: React + Tailwind CSS
 - **Blockchain Network**: Sepolia Testnet
 - **Wallet Integration**: MetaMask
-- **What3Words API**: Used for geolocation land square mapping
+- **What3Words API**: Used for geolocation land square mapping (used alternative of Paid API)
 
 ---
 

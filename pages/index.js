@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Land Tokenisation DApp</title>
+        <title>TerraSwap</title>
       </Head>
       {!state.isLoading ? (
         account.data ? (
