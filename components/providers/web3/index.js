@@ -30,6 +30,45 @@ export const Web3Provider = ({ children }) => {
         if (window.ethereum) {
           const provider = window.ethereum;
           const web3Instance = new Web3(provider);
+          const sepoliaChainId = '0xaa36a7';
+          const currentChainId = await provider.request({ method: 'eth_chainId' });
+
+          if(currentChainId!=="0xaa36a7")
+          {
+            try {
+            // Try to switch to Sepolia
+            await provider.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: sepoliaChainId }],
+            });
+            } catch (switchError) {
+              // If Sepolia is not added to Metamask, add it
+              if (switchError.code === 4902) {
+                try {
+                  await provider.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [{
+                      chainId: sepoliaChainId,
+                      chainName: 'Sepolia Test Network',
+                      nativeCurrency: {
+                        name: 'Sepolia ETH',
+                        symbol: 'ETH',
+                        decimals: 18,
+                      },
+                      rpcUrls: ['https://rpc.sepolia.org'],
+                      blockExplorerUrls: ['https://sepolia.etherscan.io'],
+                    }],
+                  });
+                } catch (addError) {
+                  console.error('Failed to add Sepolia network:', addError);
+                  return;
+                }
+              } else {
+                console.error('Failed to switch to Sepolia:', switchError);
+                return;
+              }
+            }
+          }
           
           // Request account access
           const accounts = await provider.request({ method: 'eth_requestAccounts' });

@@ -35,7 +35,7 @@ export default function Home() {
               }}
               className="border border-white p-2 rounded-md"
             >
-              Install metamask
+              Install Metamask & switch to Sepolia Test Network
             </button>
           </div>
         ) : (
@@ -51,7 +51,7 @@ export default function Home() {
       ) : (
         <div className="w-full grid h-screen place-items-center bg-black text-white">
           <div className="border border-white p-2 rounded-md">
-            Connecting.... Please! Wait for a moment.
+            Connecting to Sepolia Network... Hang tight while we set things up!
           </div>
         </div>
       )}
